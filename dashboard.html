@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Triângulo Mágico</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-page">
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo"><a href="index.html">Triângulo Mágico</a></h1>
+                <ul class="nav-menu">
+                    <li><a href="#explicacoes">Explicações</a></li>
+                    <li><a href="#calculadora">Calculadora</a></li>
+                    <li><a href="#quiz">Quiz</a></li>
+                    <li><a href="chatbot.html">ChatBot IA</a></li>
+                    <li><a href="#" id="logout-btn">Sair</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+        <section id="explicacoes" class="dashboard-section">
+            <h2>Explicações sobre Triângulos</h2>
+
+            <div class="content-tabs">
+                <button class="content-tab active" data-content="classificacao-lados">Classificação por Lados</button>
+                <button class="content-tab" data-content="classificacao-angulos">Classificação por Ângulos</button>
+                <button class="content-tab" data-content="formulas">Fórmulas Básicas</button>
+            </div>
+
+            <div class="content-container">
+                <div id="classificacao-lados" class="content active">
+                    <h3>Classificação por Lados</h3>
+                    <div class="content-grid">
+                        <div class="content-card">
+                            <h4>Triângulo Equilátero</h4>
+                            <div class="triangle-example equilatero"></div>
+                            <p>Todos os três lados têm o mesmo comprimento. Todos os ângulos internos medem 60°.</p>
+                        </div>
+                        <div class="content-card">
+                            <h4>Triângulo Isósceles</h4>
+                            <div class="triangle-example isosceles"></div>
+                            <p>Dois lados têm o mesmo comprimento e dois ângulos são iguais.</p>
+                        </div>
+                        <div class="content-card">
+                            <h4>Triângulo Escaleno</h4>
+                            <div class="triangle-example escaleno"></div>
+                            <p>Todos os três lados têm comprimentos diferentes. Todos os ângulos internos são
+                                diferentes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="classificacao-angulos" class="content">
+                    <h3>Classificação por Ângulos</h3>
+                    <div class="content-grid">
+                        <div class="content-card">
+                            <h4>Triângulo Acutângulo</h4>
+                            <div class="triangle-example acutangulo"></div>
+                            <p>Todos os três ângulos internos são agudos (menores que 90°).</p>
+                        </div>
+                        <div class="content-card">
+                            <h4>Triângulo Retângulo</h4>
+                            <div class="triangle-example retangulo"></div>
+                            <p>Possui um ângulo reto (exatamente 90°).</p>
+                        </div>
+                        <div class="content-card">
+                            <h4>Triângulo Obtusângulo</h4>
+                            <div class="triangle-example obtusangulo"></div>
+                            <p>Possui um ângulo obtuso (maior que 90°).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="formulas" class="content">
+                    <h3>Fórmulas Básicas</h3>
+                    <div class="formulas-grid">
+                        <div class="formula-card">
+                            <h4>Área do Triângulo</h4>
+                            <div class="formula">A = (b × h) / 2</div>
+                            <p>Onde <strong>b</strong> é a base e <strong>h</strong> é a altura.</p>
+                        </div>
+                        <div class="formula-card">
+                            <h4>Perímetro do Triângulo</h4>
+                            <div class="formula">P = a + b + c</div>
+                            <p>Onde <strong>a</strong>, <strong>b</strong> e <strong>c</strong> são os comprimentos dos
+                                lados.</p>
+                        </div>
+                        <div class="formula-card">
+                            <h4>Teorema de Pitágoras</h4>
+                            <div class="formula">a² = b² + c²</div>
+                            <p>Para triângulos retângulos, onde <strong>a</strong> é a hipotenusa.</p>
+                        </div>
+                        <div class="formula-card">
+                            <h4>Lei dos Cossenos</h4>
+                            <div class="formula">a² = b² + c² - 2bc·cos(A)</div>
+                            <p>Para encontrar um lado conhecendo dois lados e o ângulo entre eles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculadora" class="dashboard-section">
+            <h2>Calculadora de Triângulos</h2>
+
+            <div class="calculator-tabs">
+                <button class="calc-tab active" data-calc="area">Área</button>
+                <button class="calc-tab" data-calc="perimetro">Perímetro</button>
+                <button class="calc-tab" data-calc="pitagoras">Teorema de Pitágoras</button>
+            </div>
+
+            <div class="calculator-container">
+                <div id="area-calc" class="calc-content active">
+                    <h3>Calculadora de Área</h3>
+                    <div class="calc-form">
+                        <div class="input-group">
+                            <label for="base">Base (b):</label>
+                            <input type="number" id="base" step="0.01" placeholder="Digite a base">
+                        </div>
+                        <div class="input-group">
+                            <label for="altura">Altura (h):</label>
+                            <input type="number" id="altura" step="0.01" placeholder="Digite a altura">
+                        </div>
+                        <button id="calcular-area" class="calc-button">Calcular Área</button>
+                        <div class="resultado">
+                            <p>Área: <span id="resultado-area">-</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="perimetro-calc" class="calc-content">
+                    <h3>Calculadora de Perímetro</h3>
+                    <div class="calc-form">
+                        <div class="input-group">
+                            <label for="ladoA">Lado A:</label>
+                            <input type="number" id="ladoA" step="0.01" placeholder="Digite o lado A">
+                        </div>
+                        <div class="input-group">
+                            <label for="ladoB">Lado B:</label>
+                            <input type="number" id="ladoB" step="0.01" placeholder="Digite o lado B">
+                        </div>
+                        <div class="input-group">
+                            <label for="ladoC">Lado C:</label>
+                            <input type="number" id="ladoC" step="0.01" placeholder="Digite o lado C">
+                        </div>
+                        <button id="calcular-perimetro" class="calc-button">Calcular Perímetro</button>
+                        <div class="resultado">
+                            <p>Perímetro: <span id="resultado-perimetro">-</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pitagoras-calc" class="calc-content">
+                    <h3>Teorema de Pitágoras</h3>
+                    <div class="calc-form">
+                        <div class="input-group">
+                            <label>Calcular:</label>
+                            <div class="radio-group">
+                                <input type="radio" id="calc-hipotenusa" name="pitagoras" value="hipotenusa" checked>
+                                <label for="calc-hipotenusa">Hipotenusa</label>
+                                <input type="radio" id="calc-cateto" name="pitagoras" value="cateto">
+                                <label for="calc-cateto">Cateto</label>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="catetoA">Cateto A:</label>
+                            <input type="number" id="catetoA" step="0.01" placeholder="Digite o cateto A">
+                        </div>
+                        <div class="input-group">
+                            <label for="catetoB">Cateto B:</label>
+                            <input type="number" id="catetoB" step="0.01" placeholder="Digite o cateto B">
+                        </div>
+                        <button id="calcular-pitagoras" class="calc-button">Calcular</button>
+                        <div class="resultado">
+                            <p>Resultado: <span id="resultado-pitagoras">-</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="dashboard-section">
+            <h2>Quiz sobre Triângulos</h2>
+
+            <div class="quiz-container">
+                <div id="quiz-start" class="quiz-section active">
+                    <h3>Teste seus conhecimentos!</h3>
+                    <p>Responda a 10 perguntas sobre triângulos e veja seu desempenho.</p>
+                    <button id="start-quiz" class="quiz-button">Iniciar Quiz</button>
+                </div>
+
+                <div id="quiz-questions" class="quiz-section">
+                    <div class="quiz-header">
+                        <div class="quiz-progress">
+                            <span id="current-question">1</span> de <span id="total-questions">10</span>
+                        </div>
+                        <div class="quiz-score">
+                            Pontuação: <span id="quiz-score">0</span>
+                        </div>
+                    </div>
+
+                    <div class="question-container">
+                        <h3 id="question-text">Pergunta aparecerá aqui</h3>
+                        <div id="options-container" class="options-container">
+                            <!-- As opções serão geradas dinamicamente -->
+                        </div>
+                    </div>
+
+                    <button id="next-question" class="quiz-button">Próxima Pergunta</button>
+                </div>
+
+                <div id="quiz-results" class="quiz-section">
+                    <h3>Resultado do Quiz</h3>
+                    <div class="result-circle">
+                        <span id="final-score">0</span> / 10
+                    </div>
+                    <p id="result-message">Mensagem de resultado</p>
+                    <button id="restart-quiz" class="quiz-button">Tentar Novamente</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Triângulo Mágico - Site Educativo</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

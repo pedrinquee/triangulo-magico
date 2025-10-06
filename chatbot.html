@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot IA - Triângulo Mágico</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+
+<body class="chatbot-page">
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo"><a href="index.html">Triângulo Mágico</a></h1>
+                <ul class="nav-menu">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#explicacoes">Explicações</a></li>
+                    <li><a href="#calculadora">Calculadora</a></li>
+                    <li><a href="#quiz">Quiz</a></li>
+                    <li><a href="#" id="logout-btn">Sair</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="chatbot-container">
+        <a href="dashboard.html" class="back-button">← Voltar ao Dashboard</a>
+
+        <div class="chatbot-header">
+            <h1>Assistente de IA para Triângulos</h1>
+            <p>Faça perguntas sobre triângulos, fórmulas, classificação e muito mais. Estou aqui para ajudar no seu
+                aprendizado!</p>
+        </div>
+
+        <div class="chat-box-container">
+            <div class="chat-box" id="chat-box">
+                <div class="message bot-message">
+                    Olá! Sou seu assistente de estudos sobre triângulos. Posso ajudar com:
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                        <li>Classificação de triângulos</li>
+                        <li>Fórmulas de área e perímetro</li>
+                        <li>Teoremas (Pitágoras, Lei dos Senos, etc.)</li>
+                        <li>Resolução de problemas</li>
+                        <li>E muito mais!</li>
+                    </ul>
+                    Faça uma pergunta ou escolha uma das sugestões abaixo.
+                </div>
+            </div>
+
+            <div class="input-container">
+                <form id="input-form">
+                    <input type="text" id="user-input" placeholder="Digite sua pergunta sobre triângulos..."
+                        autocomplete="off">
+                    <button type="submit" id="send-button">Enviar</button>
+                </form>
+
+                <div class="suggestions">
+                    <button class="suggestion-button" data-question="Como calcular a área de um triângulo?">Área do
+                        triângulo</button>
+                    <button class="suggestion-button" data-question="Quais são os tipos de triângulos?">Tipos de
+                        triângulos</button>
+                    <button class="suggestion-button" data-question="Explique o Teorema de Pitágoras">Teorema de
+                        Pitágoras</button>
+                    <button class="suggestion-button" data-question="Como calcular o perímetro?">Cálculo de
+                        perímetro</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="typing-indicator" id="typing-indicator">Assistente está digitando...</div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Triângulo Mágico - Site Educativo</p>
+    </footer>
+
+    <script src="js/chat.js"></script>
+</body>
+
+</html>
