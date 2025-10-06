@@ -88,8 +88,3 @@ inputForm.addEventListener('submit', (e) => {
         getBotResponse(userMessage);
     }
 });
-
-// Mensagem inicial do bot focada em triângulos
-document.addEventListener('DOMContentLoaded', function () {
-    addMessage('bot', 'Olá! Sou seu assistente especializado em TRIÂNGULOS! Posso ajudar você com:\n\n• Classificação de triângulos\n• Cálculo de área e perímetro\n• Teorema de Pitágoras\n• Propriedades geométricas\n• Resolução de problemas\n\nFaça sua pergunta sobre triângulos!');
-});
